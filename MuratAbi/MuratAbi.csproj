@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{606C8062-EC15-40A6-B8BF-310394ABF72F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MuratAbi</RootNamespace>
+    <AssemblyName>MuratAbi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Motor.cs" />
+    <Compile Include="Entities\Musteri.cs" />
+    <Compile Include="Entities\Parca.cs" />
+    <Compile Include="Entities\Servis.cs" />
+    <Compile Include="Entities\Veri.cs" />
+    <Compile Include="Formlar\Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Borc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Borc.Designer.cs">
+      <DependentUpon>Borc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Cari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Cari.Designer.cs">
+      <DependentUpon>Cari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\CariKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\CariKayit.Designer.cs">
+      <DependentUpon>CariKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\CiktiAlma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\CiktiAlma.Designer.cs">
+      <DependentUpon>CiktiAlma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\MotorBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\MotorBilgileri.Designer.cs">
+      <DependentUpon>MotorBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\MotorKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\MotorKayit.Designer.cs">
+      <DependentUpon>MotorKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\ServisGecmisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\ServisGecmisi.Designer.cs">
+      <DependentUpon>ServisGecmisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\ServisKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\ServisKayit.Designer.cs">
+      <DependentUpon>ServisKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formlar\Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Borc.resx">
+      <DependentUpon>Borc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Cari.resx">
+      <DependentUpon>Cari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\CariKayit.resx">
+      <DependentUpon>CariKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\CiktiAlma.resx">
+      <DependentUpon>CiktiAlma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\MotorBilgileri.resx">
+      <DependentUpon>MotorBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\MotorKayit.resx">
+      <DependentUpon>MotorKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\ServisGecmisi.resx">
+      <DependentUpon>ServisGecmisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\ServisKayit.resx">
+      <DependentUpon>ServisKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooltext398524843660021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixlr-bg-result %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material-icon-2155448_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material-icon-2155448_12801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-1970474_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass-189254_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bike-39131_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-3245739_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-dialog-ok-apply-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-g409eb1fd8_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TVS GEÇİT MOTOR.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
