@@ -30,6 +30,7 @@ namespace MuratAbi.Formlar
         private void button3_Click(object sender, EventArgs e)
         {
             ServisKayit s = new ServisKayit();
+            s.Id = 0;
             s.Show();
         }
 

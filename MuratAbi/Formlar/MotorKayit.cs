@@ -31,6 +31,9 @@ namespace MuratAbi
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Kaydedildi");
+            MotorBilgileri motorBilgileri = new MotorBilgileri();
+            motorBilgileri.Show();
+            this.Close();
         }
 
         private void MotorKayit_Load(object sender, EventArgs e)

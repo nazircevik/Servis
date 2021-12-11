@@ -8,7 +8,7 @@ namespace MuratAbi.Entities
 {
     class Veri
     {
-        public string Baglanti = @"server=(localdb)\MSSQLLocalDB; Database=SERVIS;Connect Timeout=60; Trusted_Connection=True;"; 
+        public string Baglanti = @"server=localhost\SQLEXPRESS; Database=SERVIS;Connect Timeout=60; Trusted_Connection=True;"; 
        
     }
 }
