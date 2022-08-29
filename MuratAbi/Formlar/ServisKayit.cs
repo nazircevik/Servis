@@ -28,6 +28,8 @@ namespace MuratAbi
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBox2.SelectedIndex = listBox1.SelectedIndex;
+            listBox3.SelectedIndex = listBox1.SelectedIndex;
 
         }
 
@@ -38,11 +40,20 @@ namespace MuratAbi
         int servisId = 0;
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text!=""&&textBox2.Text!="")
+            {
+            listBox1.Items.Add(textBox2.Text);
+                listBox2.Items.Add(textBox1.Text);
+                listBox3.Items.Add(numericUpDown1.Value);
 
-            listBox1.Items.Add(textBox2.Text + "  -> " + textBox1.Text);
-            Parca parca = new Parca() { ParcaAciklama = textBox2.Text, Tutar = Convert.ToDouble(textBox1.Text), servisId = servisId };
+
+                Parca parca = new Parca() { ParcaAciklama = textBox2.Text, Tutar = Convert.ToDouble(textBox1.Text), servisId = servisId,Adet=Convert.ToInt32(numericUpDown1.Value) };
             parcalar.Add(parca);
-
+            }
+            else
+            {
+                MessageBox.Show("Boş Alanları Doldurunuz");
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -117,10 +128,15 @@ namespace MuratAbi
                 SqlDataReader dr3 = cmd3.ExecuteReader();
                 while (dr3.Read())
                 {
-                    listBox1.Items.Add(dr3[1].ToString() + "  -> " + dr3[2].ToString());
+                    listBox1.Items.Add(dr3[1].ToString());
+                    listBox2.Items.Add(dr3[2].ToString());
+                    listBox3.Items.Add(dr3[4].ToString());
+
                     Parca parca2 = new Parca();
                     parca2.ParcaAciklama = dr3[1].ToString();
                     parca2.Tutar = Convert.ToDouble(dr3[2]);
+                    parca2.Adet = Convert.ToInt32(dr3[4]);
+
                     parca2.servisId = Id;
                     parca2.Id = Convert.ToInt32(dr3[0]);
                     parcalar.Add(parca2);
@@ -170,8 +186,8 @@ namespace MuratAbi
                 for (int i = 0; i < parcalar.Count; i++)
                 {
                     SqlCommand cmd2 = new SqlCommand();
-                    cmd.CommandText = "insert into Parca (ParcaAciklama,Tutar,ServisId) values " +
-                   "('" + parcalar[i].ParcaAciklama + "'," + parcalar[i].Tutar + "," + parcalar[i].servisId + ") ";
+                    cmd.CommandText = "insert into Parca (ParcaAciklama,Tutar,ServisId,Adet) values " +
+                   "('" + parcalar[i].ParcaAciklama + "'," + parcalar[i].Tutar + "," + parcalar[i].servisId + ","+numericUpDown1.Value+") ";
                     cmd.Connection = con;
                     cmd.ExecuteNonQuery();
 
@@ -238,8 +254,8 @@ namespace MuratAbi
                     if (parcalar[i].Id == 0 || parcalar[i] == null)
                     {
                         SqlCommand cmd2 = new SqlCommand();
-                        cmd.CommandText = "insert into Parca (ParcaAciklama,Tutar,ServisId) values " +
-                       "('" + parcalar[i].ParcaAciklama + "'," + parcalar[i].Tutar + "," + parcalar[i].servisId + ") ";
+                        cmd.CommandText = "insert into Parca (ParcaAciklama,Tutar,ServisId,Adet) values " +
+                       "('" + parcalar[i].ParcaAciklama + "'," + parcalar[i].Tutar + "," + parcalar[i].servisId + ","+numericUpDown1.Value+") ";
                         cmd.Connection = con;
                         cmd.ExecuteNonQuery();
 
@@ -304,6 +320,52 @@ namespace MuratAbi
             CiktiAlma ciktiAlma = new CiktiAlma();
             ciktiAlma.servisId = Id;
             ciktiAlma.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double tutar = Convert.ToDouble(listBox2.SelectedItem);
+            int adet = Convert.ToInt32(listBox3.SelectedItem);
+            string aciklama = listBox1.SelectedItem.ToString();
+            var b = parcalar.FirstOrDefault(x => x.ParcaAciklama==aciklama && x.Tutar ==tutar&&x.Adet==adet);
+            int id = b.Id;
+
+            int deleteindex = listBox1.SelectedIndex;
+            listBox1.Items.RemoveAt(deleteindex);
+            listBox2.Items.RemoveAt(deleteindex);
+            listBox3.Items.RemoveAt(deleteindex);
+
+            Veri veri = new Veri();
+            SqlConnection con;
+            con = new  SqlConnection(veri.Baglanti);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "delete Parca where Id="+id+"";
+            cmd.Connection = con;
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            parcalar.Remove(b); 
+            
+           
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                listBox1.SelectedIndex = listBox2.SelectedIndex;
+                listBox3.SelectedIndex = listBox2.SelectedIndex;
+
+            
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
+                listBox2.SelectedIndex = listBox3.SelectedIndex;
+                listBox1.SelectedIndex = listBox3.SelectedIndex;
+
+            
         }
     }
 }

@@ -63,5 +63,11 @@ namespace MuratAbi.Formlar
             ServisGecmisi s = new ServisGecmisi();
             s.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ParaTakip pt = new ParaTakip();
+            pt.Show();
+        }
     }
 }

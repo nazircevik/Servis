@@ -44,6 +44,7 @@ namespace MuratAbi
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -72,10 +73,18 @@ namespace MuratAbi
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,7 +110,7 @@ namespace MuratAbi
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 591);
+            this.panel1.Size = new System.Drawing.Size(1243, 591);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -146,7 +155,7 @@ namespace MuratAbi
             // 
             this.button4.BackgroundImage = global::MuratAbi.Properties.Resources.icons8_print_100;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(994, 295);
+            this.button4.Location = new System.Drawing.Point(1080, 295);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 63);
             this.button4.TabIndex = 13;
@@ -216,7 +225,7 @@ namespace MuratAbi
             // 
             this.button3.BackgroundImage = global::MuratAbi.Properties.Resources.Save_icon;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(1075, 295);
+            this.button3.Location = new System.Drawing.Point(1161, 295);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 63);
             this.button3.TabIndex = 4;
@@ -225,6 +234,14 @@ namespace MuratAbi
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.listBox3);
+            this.panel4.Controls.Add(this.listBox2);
+            this.panel4.Controls.Add(this.numericUpDown1);
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.button1);
@@ -234,13 +251,24 @@ namespace MuratAbi
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(371, 364);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(779, 227);
+            this.panel4.Size = new System.Drawing.Size(872, 227);
             this.panel4.TabIndex = 3;
+            // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button6.Location = new System.Drawing.Point(437, 38);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(105, 29);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Seçili Olanı Sil";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(565, 124);
+            this.label4.Location = new System.Drawing.Point(656, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 6;
@@ -249,18 +277,17 @@ namespace MuratAbi
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(346, 122);
+            this.label3.Location = new System.Drawing.Point(360, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 15);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Parça Açıklama";
+            this.label3.Text = "Adet";
             // 
             // button1
             // 
             this.button1.BackgroundImage = global::MuratAbi.Properties.Resources.Actions_dialog_ok_apply_icon;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(681, 153);
+            this.button1.Location = new System.Drawing.Point(792, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 62);
             this.button1.TabIndex = 4;
@@ -270,16 +297,16 @@ namespace MuratAbi
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(568, 153);
+            this.textBox1.Location = new System.Drawing.Point(659, 151);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 33);
+            this.textBox1.Size = new System.Drawing.Size(70, 33);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(346, 153);
+            this.textBox2.Location = new System.Drawing.Point(437, 151);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 33);
@@ -288,9 +315,9 @@ namespace MuratAbi
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 3);
+            this.listBox1.Location = new System.Drawing.Point(6, 29);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(334, 212);
+            this.listBox1.Size = new System.Drawing.Size(275, 186);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -502,7 +529,7 @@ namespace MuratAbi
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button2.Location = new System.Drawing.Point(1113, 0);
+            this.button2.Location = new System.Drawing.Point(1204, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(37, 31);
             this.button2.TabIndex = 1;
@@ -510,11 +537,78 @@ namespace MuratAbi
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(736, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(29, 13);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Adet";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(735, 156);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(46, 20);
+            this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(287, 29);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(67, 186);
+            this.listBox2.TabIndex = 10;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(360, 29);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(43, 186);
+            this.listBox3.TabIndex = 11;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(81, 13);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "Parça Açıklama";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(434, 122);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(81, 13);
+            this.label20.TabIndex = 13;
+            this.label20.Text = "Parça Açıklama";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(287, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Tutar";
+            // 
             // ServisKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 591);
+            this.ClientSize = new System.Drawing.Size(1243, 591);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ServisKayit";
@@ -529,6 +623,7 @@ namespace MuratAbi
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -578,6 +673,14 @@ namespace MuratAbi
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
 

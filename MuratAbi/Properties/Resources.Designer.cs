@@ -163,9 +163,30 @@ namespace MuratAbi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_blue_writing_board_illustration_computer_icons_pencil_drawing_report_angle_pencil_text {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-blue-writing-board-illustration-computer-icons-pencil-drawing-rep" +
+                        "ort-angle-pencil-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_icon {
             get {
                 object obj = ResourceManager.GetObject("Save-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tvs {
+            get {
+                object obj = ResourceManager.GetObject("tvs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

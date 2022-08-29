@@ -11,6 +11,7 @@ namespace MuratAbi.Entities
         public int Id { get; set; }
         public string ParcaAciklama { get; set; }
         public double Tutar { get; set; }
+        public int Adet { get; set; }
         public int servisId { get; set; }
     }
 }
